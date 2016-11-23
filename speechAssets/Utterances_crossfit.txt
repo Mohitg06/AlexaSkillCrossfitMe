@@ -1,0 +1,38 @@
+RecipeIntent What is {Item}
+RecipeIntent launch {Item}
+RecipeIntent Is Crossfit for {Item}
+RecipeIntent Where can I choose Crossfit {Item}
+RecipeIntent what is  a sample Crossfit {Item}
+RecipeIntent what if I choose to  do no warmup when I {Item}
+RecipeIntent what is Crossfit benchmark WOD {Item}
+RecipeIntent what is Crossfit benchmark WOD {Item}
+RecipeIntent what is Crossfit benchmark WOD  {Item}
+RecipeIntent what is Crossfit benchmark WOD  {Item}
+RecipeIntent what is Crossfit benchmark WOD  {Item}
+RecipeIntent what is Crossfit benchmark WOD  {Item}
+RecipeIntent what kind of {Item} Crossfit recommends
+RecipeIntent how do I {Item} for Crossfit
+RecipeIntent What are Crossfit {Item} options
+RecipeIntent I have {Item} at Crossfit.
+RecipeIntent What do you mean by Crossfit {Item}
+RecipeIntent What is hook {Item}
+RecipeIntent What is hero workout {Item}
+RecipeIntent What do you mean by {Item} in Crossfit
+RecipeIntent where can I get more {Item} about Crossfit
+RecipeIntent Tell me one fun {Item} about Crossfit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
