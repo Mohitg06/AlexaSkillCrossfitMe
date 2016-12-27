@@ -1,0 +1,5 @@
+SessionEndedRequest What is {Session}
+SessionEndedRequest launch {Session}
+SessionEndedRequest {Session}
+SessionEndedRequest Lets {Session}
+SessionEndedRequest Is Crossfit for {Session}

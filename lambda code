@@ -3,6 +3,9 @@
 var Alexa = require('alexa-sdk');
 var APP_ID = undefined; // TODO replace with your app ID (OPTIONAL).
 var recipes = require('./recipescrossfit');
+var shouldEndSession = true;
+var goodbyeMessage = "OK, have a nice time getting to know crossfit";
+
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -63,13 +66,13 @@ var handlers = {
         this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
     },
     'AMAZON.StopIntent': function () {
-        this.emit('SessionEndedRequest');
+        this.emit(':tell', goodbyeMessage);
     },
     'AMAZON.CancelIntent': function () {
         this.emit('SessionEndedRequest');
     },
     'SessionEndedRequest':function () {
-        this.emit(':tell', this.t("STOP_MESSAGE"));
+        this.emit('AMAZON.StopIntent');
     }
 };
 
@@ -94,7 +97,7 @@ var languageStrings = {
     "en-US": {
         "translation": {
             "RECIPES" : recipes.RECIPE_EN_US,
-            "SKILL_NAME" : "Crossfit Helper ",
+            "SKILL_NAME" : "Crossfit Me  ",
             "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what is crossfit? , where can I choose crossfit box, tell me one fun fact about crossfit ... Now, what can I help you with.",
             "WELCOME_REPROMT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",

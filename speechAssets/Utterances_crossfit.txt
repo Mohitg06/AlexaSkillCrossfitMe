@@ -1,8 +1,9 @@
 RecipeIntent What is {Item}
 RecipeIntent launch {Item}
+RecipeIntent {Item}
+RecipeIntent Lets {Item}
 RecipeIntent Is Crossfit for {Item}
 RecipeIntent Where can I choose Crossfit {Item}
-RecipeIntent what is  a sample Crossfit {Item}
 RecipeIntent what if I choose to  do no warmup when I {Item}
 RecipeIntent what is Crossfit benchmark WOD {Item}
 RecipeIntent what is Crossfit benchmark WOD {Item}

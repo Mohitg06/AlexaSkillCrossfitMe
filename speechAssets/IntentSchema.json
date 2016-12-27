@@ -20,6 +20,15 @@
     },
     {
       "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "SessionEndedRequest",
+      "slots": [
+      {
+        "name" : "Session",
+        "type": "END"
+      }
+     ]
     }
   ]
 }

@@ -1,6 +1,8 @@
 module.exports = {
     "RECIPE_EN_US" : {
-        "me": "Yes , it is  defintely for you",
+        "me": "Yes!! , it is  defintely for you",
+        "help": "This skill will give you a brief introduction to Crossfit, you can start by asking about what is crossfit, what diet it recommnends and also ask few standard crossfit WODs",
+        "endsession": "Your skill will be ended now, thank you",
         "crossfitme": "What can I help you with",
         "karen": "Wal-Ball 150 shots for time ",
         "cindy": "5 pull ups, 10 push ups and 15 squats,As many rounds as possible in 20 min",
@@ -9,7 +11,6 @@ module.exports = {
         "helen": "3 rounds for time; 400 meter run, 1.5 pood Kettlebell swing  for 21 reps, pull-ups 12 reps ",
         "information":" you can go on to https://www.crossfit.com/ and check it out.",
         "diane": "21-15-9 reps for time, Deadlift 225 lbs, Handstand push-ups ",
-        "warmup": "Stretch, do body weight squats, 200 meter run ",
         "box": "Check reviews online for a crossfit box, go for dropins , get a feel of it.",
         "diet": "Crossfit recommends paleo diet.",
         "start": "Then you might get hurt and we don't want you to get hurt ",

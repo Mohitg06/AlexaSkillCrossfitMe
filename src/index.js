@@ -1,9 +1,9 @@
 'use strict';
 
-var https = require('https'),
 var Alexa = require('alexa-sdk');
 var APP_ID = undefined; // TODO replace with your app ID (OPTIONAL).
-var recipes = require('./recipes');
+var recipes = require('./recipescrossfit');
+var goodbyeMessage = "OK, have a nice time getting to know crossfit";
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -39,6 +39,7 @@ var handlers = {
             this.attributes['speechOutput'] = recipe;
             this.attributes['repromptSpeech'] = this.t("RECIPE_REPEAT_MESSAGE");
             this.emit(':askWithCard', recipe, this.attributes['repromptSpeech'], cardTitle, recipe);
+            shouldEndSession: true;
         } else {
             var speechOutput = this.t("RECIPE_NOT_FOUND_MESSAGE");
             var repromptSpeech = this.t("RECIPE_NOT_FOUND_REPROMPT");
@@ -51,11 +52,9 @@ var handlers = {
 
             this.attributes['speechOutput'] = speechOutput;
             this.attributes['repromptSpeech'] = repromptSpeech;
-
-            getRewards(callback);
-
-
-            //this.emit(':ask', speechOutput, repromptSpeech);
+              
+            this.emit(':ask', speechOutput, repromptSpeech);
+            shouldEndSession: true;
         }
     },
     'AMAZON.HelpIntent': function () {
@@ -67,39 +66,16 @@ var handlers = {
         this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
     },
     'AMAZON.StopIntent': function () {
-        this.emit('SessionEndedRequest');
+        this.emit(':tell', goodbyeMessage);
     },
     'AMAZON.CancelIntent': function () {
         this.emit('SessionEndedRequest');
     },
     'SessionEndedRequest':function () {
-        this.emit(':tell', this.t("STOP_MESSAGE"));
+        this.emit('AMAZON.StopIntent');
     }
 };
 
-function getRewards(callback) {
-
-    return https.get({
-        host: 'api-sandbox.capitalone.com',
-        path: '/rewards/accounts/'
-    }, function(response) {
-        // Continuously update stream with data
-        var body = '';
-        response.on('data', function(d) {
-            body += d;
-        });
-        response.on('end', function() {
-
-            // Data reception is done, do whatever with it!
-            console.log(body)
-           
-            callback(
-                this.emit(':ask', speechOutput, repromptSpeech);
-                );
-        });
-    });
-
-}
 
 var languageStrings = {
     "en-GB": {
@@ -122,7 +98,7 @@ var languageStrings = {
     "en-US": {
         "translation": {
             "RECIPES" : recipes.RECIPE_EN_US,
-            "SKILL_NAME" : "Crossfit Helper ",
+            "SKILL_NAME" : "Crossfit Me ",
             "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, whatis crossfit? , where can I choose crossfit box, tell me one fun fact about crossfit ... Now, what can I help you with.",
             "WELCOME_REPROMT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",
